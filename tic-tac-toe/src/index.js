@@ -7,7 +7,7 @@ const Square = (props) => {
   return (
     <button 
       className="square"
-      onClick={() => {}}
+      onClick={props.onClickEvent}
     >
      {props.value}
     </button>
@@ -25,9 +25,18 @@ const Board = () => {
 
   const [squares, setSquares] = useState(initialSquares);
 
+
+  const handleClickEvent = (i) => {
+    alert(`square ${i} clicked`);
+  };
+
+
   const renderSquare = (i) => {
     return (
-      <Square value={squares[i]} />
+      <Square 
+        value={squares[i]} 
+        onClickEvent = {() => handleClickEvent(i)}
+      />
     );
   };
 
