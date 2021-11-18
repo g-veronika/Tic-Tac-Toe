@@ -5,9 +5,12 @@ import './index.css';
 
 const Square = (props) => {
   return (
-    <div className="square">
+    <button 
+      className="square"
+      onClick={() => alert(`square ${props.value} clicked`)}
+    >
      {props.value}
-    </div>
+    </button>
   );
 };
 

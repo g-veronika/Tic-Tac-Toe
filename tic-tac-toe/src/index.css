@@ -26,3 +26,8 @@ body {
   width: 100px;
   height: 100px;
 }
+
+.square:focus {
+  outline: none;
+  background-color: #222;
+}
