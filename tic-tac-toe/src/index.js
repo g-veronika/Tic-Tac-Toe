@@ -19,13 +19,15 @@ const Board = () => {
 
   const initialSquares = Array(9).fill(null);
   const [squares, setSquares] = useState(initialSquares);
+  const [xIsNext, setXIsNext] = useState(true);
 
 
   const handleClickEvent = (i) => {
 
     const newSquares = [...squares];
-    newSquares[i] = 'X';
+    newSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(newSquares);
+    setXIsNext(!xIsNext);
   };
 
 
@@ -38,13 +40,11 @@ const Board = () => {
     );
   };
 
+  const status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+
   return (
-    <div style={{
-      backgroundColor: 'skyblue',
-      margin: 10,
-      padding: 20
-    }}>
-      Board
+    <div>
+      <div className="status">{status}</div>
       <div className="board-row">
        {renderSquare(0)}{renderSquare(1)}{renderSquare(2)}
       </div>
@@ -63,7 +63,7 @@ const Board = () => {
 const Game = () => {
   return (
     <div className="game">
-      Game
+      Tic-Tac-Toe
       <Board />
     </div>
   ); 

@@ -31,3 +31,8 @@ body {
   outline: none;
   background-color: #222;
 }
+
+.status {
+  margin: 20px;
+  font-size: 24px;
+}
